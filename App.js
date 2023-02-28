@@ -3,14 +3,18 @@ import Header from './src/components/Header';
 import { StyleSheet, Text, View, FlatList } from 'react-native';
 
 export default function App() {
-  const tasks = ['Tarefa 1', 'Tarefa 2', 'Tarefa 3', 'Tarefa 4', 'Tarefa 5', 'Tarefa 6', 'Tarefa 7']
+  const tasks = [
+                 {nome: 'ASSAULT RIFLE', dano:'36'},
+                 {nome: 'MAKESHIFT RIFLE', dano:'33'},
+                 {nome: 'PRIMAL RIFLE', dano:'36'},
+                ];
   return (
     <View style={styles.container}>
       <Header />
       <View>
-      <FlatList
+      <FlatList style={styles.lista}
         data={tasks}
-        renderItem={({ item }) => <Text>{item}</Text>}
+        renderItem={({ item }) => <Text style={styles.texto}>{item.nome}    {item.dano}</Text>}
       />
       </View>
     </View>
@@ -22,5 +26,14 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: '#ece6ff',
     alignItems: 'center',
+    textAlign: 'center',
   },
+  lista:{
+    flexDirection: 'row',
+    flexWrap: 'wrap',
+  },
+  texto: {
+    fontSize: 30,
+    padding: 10,
+  }
 });
