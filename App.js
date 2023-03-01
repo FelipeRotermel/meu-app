@@ -10,11 +10,12 @@ export default function App() {
                 ];
   return (
     <View style={styles.container}>
-      <Header />
+      <Header titulo='Fortnite Guns'/>
       <View>
-      <FlatList style={styles.lista}
-        data={tasks}
-        renderItem={({ item }) => <Text style={styles.texto}>{item.nome}    {item.dano}</Text>}
+      <FlatList style={styles.lista} data={tasks} renderItem={({ item }) => 
+        <Text style={styles.texto}>
+          {item.nome}{item.dano}
+        </Text>}
       />
       </View>
     </View>
@@ -25,15 +26,14 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: '#ece6ff',
-    alignItems: 'center',
-    textAlign: 'center',
-  },
-  lista:{
     flexDirection: 'row',
     flexWrap: 'wrap',
+    alignItems: 'flex-start',
+  },
+  lista:{
+    width: '100%' 
   },
   texto: {
     fontSize: 30,
-    padding: 10,
   }
 });

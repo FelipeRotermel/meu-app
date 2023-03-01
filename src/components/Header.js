@@ -1,11 +1,14 @@
 import {Text, View, StyleSheet } from 'react-native';
+import { Component } from 'react';
 
-export default function Header() {
-    return(
-        <View style={styles.header}>
-            <Text style={styles.texto}>Lista de tarefas</Text>
-        </View>
-    );
+export default class extends Component {
+    render() {
+        return(
+            <View style={styles.header}>
+                <Text style={styles.texto}>{this.props.titulo}</Text>
+            </View>
+        );
+    }
 }
 
 const styles = StyleSheet.create({
